@@ -1,12 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Catalogos;
 
-use App\Models\Catalogos\Dependencia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\SsUnidadRespons;
-use App\Models\SsUnidadEjecut;
 use App\Models\Instrumental\RmCImovimientos;
 use App\Models\Instrumental\RmCInstrumental;
 use App\Models\Instrumental\RmDInstrumental;

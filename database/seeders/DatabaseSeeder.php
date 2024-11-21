@@ -14,20 +14,20 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            // SsUnidadResponsSeeder::class,
-            // SsUnidadEjecutSeeder::class,
-            // DependenciaSeeder::class,
+            SsUnidadResponsSeeder::class,
+            SsUnidadEjecutSeeder::class,
+            DependenciaSeeder::class,
             RmAlmacenSeeder::class,
-            // RmInmuebleSeeder::class,
-            // RmNivelSeeder::class,
-            // RmMarcaSeeder::class,
-            // RmTipooperaSeeder::class,
-            // RmCuentaMayorSeeder::class,
-            // RmSeccionSeeder::class,
-            // RmUnidadDeMedidaSeeder::class,
-            // RmSubGrupoSeeder::class,
-            // RmClaseSeeder::class,
-            // RmCabmsSeeder::class,
+            RmInmuebleSeeder::class,
+            RmNivelSeeder::class,
+            RmMarcaSeeder::class,
+            RmTipooperaSeeder::class,
+            RmCuentaMayorSeeder::class,
+            RmSeccionSeeder::class,
+            RmUnidadDeMedidaSeeder::class,
+            RmSubGrupoSeeder::class,
+            RmClaseSeeder::class,
+            RmCabmsSeeder::class,
             UsuarioSeeder::class
         ]);
     }

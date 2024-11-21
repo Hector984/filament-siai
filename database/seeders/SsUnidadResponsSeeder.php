@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\SsUnidadRespons;
+use App\Models\Catalogos\SsUnidadRespons;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use League\Csv\Reader;

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\RmAlmacen;
+use App\Models\Catalogos\RmAlmacen;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use League\Csv\Reader;

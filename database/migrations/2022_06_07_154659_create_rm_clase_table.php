@@ -18,7 +18,7 @@ class CreateRmClaseTable extends Migration
             $table->string('Subgrupo', 3);
             $table->foreign('Subgrupo')->references('Subgrupo')->on('rm_subgrupo');
             $table->integer('Clase');
-            $table->string('Descripcion', 50);
+            $table->string('Descripcion', 100);
             $table->timestamps();
         });
     }

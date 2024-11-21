@@ -14,8 +14,8 @@ class TipoOperacion extends Model
     protected $fillable = ['Id_To', 'Documento', 'Descripcion', 'Movimiento'];
     protected $primaryKey = "Id_To";
 
-    public function autorizaciones()
-    {
-        return $this->hasMany(Autorizacion::class, 'Id_To', 'Id_To');
-    }
+    // public function autorizaciones()
+    // {
+    //     return $this->hasMany(Autorizacion::class, 'Id_To', 'Id_To');
+    // }
 }
