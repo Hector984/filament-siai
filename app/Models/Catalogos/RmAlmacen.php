@@ -8,6 +8,7 @@ use App\Models\Instrumental\RmCImovimientos;
 use App\Models\Instrumental\RmCInstrumental;
 use App\Models\Instrumental\RmDInstrumental;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class RmAlmacen extends Model
 {
@@ -19,11 +20,13 @@ class RmAlmacen extends Model
     protected $keyType = 'string';
     protected $fillable = ['Almacen','Cuenta', 'Descripcion','Almacenista','Puesto_Alm','Direccion','Telefono','Email','Responsable_C','Puesto_Resp_C','Responsable_I','Puesto_Resp_I','Ur','Ue','Accesoif'];
 
-    public function ur(){
+    public function ur(): BelongsTo
+    {
         return $this->belongsTo(SsUnidadRespons::class, 'Ur','Ur');
     }
 
-    public function ue(){
+    public function ue(): BelongsTo
+    {
         return $this->belongsTo(SsUnidadEjecut::class,'Ue','Ue');
     }
 

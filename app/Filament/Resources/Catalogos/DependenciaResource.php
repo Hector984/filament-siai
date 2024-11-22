@@ -19,13 +19,16 @@ class DependenciaResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationGroup = 'Catalogos';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('ln_dependencia')
                     ->required()
-                    ->maxLength(150),
+                    ->maxLength(150)
+                    ->label('Sector'),
             ]);
     }
 
@@ -33,13 +36,12 @@ class DependenciaResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id_dependencia')
+                    ->label('Clave Sector'),
                 Tables\Columns\TextColumn::make('ln_dependencia')
-                    ->searchable(),
+                    ->searchable()
+                    ->label('Sector'),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -49,6 +51,7 @@ class DependenciaResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -68,8 +71,8 @@ class DependenciaResource extends Resource
     {
         return [
             'index' => Pages\ListDependencias::route('/'),
-            'create' => Pages\CreateDependencia::route('/create'),
-            'edit' => Pages\EditDependencia::route('/{record}/edit'),
+            // 'create' => Pages\CreateDependencia::route('/create'),
+            // 'edit' => Pages\EditDependencia::route('/{record}/edit'),
         ];
     }
 }
