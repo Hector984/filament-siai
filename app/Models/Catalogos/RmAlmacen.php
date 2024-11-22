@@ -9,6 +9,7 @@ use App\Models\Instrumental\RmCInstrumental;
 use App\Models\Instrumental\RmDInstrumental;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class RmAlmacen extends Model
 {
@@ -52,5 +53,12 @@ class RmAlmacen extends Model
     {
         return $this->belongsTo(Dependencia::class, 'Dependencia', 'id_dependencia');
     }
+
+
+    public function user() : HasMany
+    {
+        return $this->hasMany(User::class,'Almacen', 'cve_almacen');
+    }
+
 
 }

@@ -9,4 +9,11 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateDependencia extends CreateRecord
 {
     protected static string $resource = DependenciaResource::class;
+
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+        $data['estatus'] = 2;
+
+        return $data;
+    }
 }
