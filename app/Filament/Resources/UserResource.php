@@ -74,10 +74,14 @@ class UserResource extends Resource
                                 $set('cve_almacen', null);
                             }),
                         Forms\Components\Select::make('idue')
-                            ->options(fn(Get $get): Collection => SsUnidadEjecut::query()
-                                ->where('ur', $get('idur'))
-                                ->orderBy('Ue')->orderBy('Clave')->orderBy('Descripcion')
-                                ->pluck('Descripcion', 'Ue'))
+                            // ->options(fn(Get $get): Collection => SsUnidadEjecut::query()
+                            //     ->where('ur', $get('idur'))
+                            //     ->orderBy('Ue')->orderBy('Clave')->orderBy('Descripcion')
+                            //     ->pluck('Descripcion', 'Ue'))
+                            ->relationship('ue', 'Descripcion',
+                                modifyQueryUsing: fn(Builder $query, Get $get) => $query->where('Ur', $get('idur'))->orderBy('Clave')->orderBy('Descripcion')
+                            )
+                            ->getOptionLabelFromRecordUsing(fn(Model $record) => "{$record->Clave} {$record->Descripcion} ")
                             ->preload()
                             ->searchable(['clave', 'descripcion'])
                             ->live()

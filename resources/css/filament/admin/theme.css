@@ -1,0 +1,73 @@
+@import '/vendor/filament/filament/resources/css/theme.css';
+
+@config 'tailwind.config.js';
+
+:root {
+    --agricultura-primary-color: #1e5b4f;
+    --agricultura-secondary-color: #9b2247;
+    --agricultura-neutral-black-color: #161a1d;
+    --agricultura-gold-color: #a57f2c;
+    --agricultura-cool-gray-color: #98989a;
+    --agricultura-white-color: #fff;
+}
+
+/* top bar */
+.fi-topbar > nav {
+    background-color: var(--agricultura-gold-color);
+}
+
+.dark\:bg-custom-500:is(.dark *) {
+    --tw-bg-opacity: 1;
+    background-color: var(--agricultura-primary-color);
+}
+
+/* Textos */
+.text-primary-600 {
+    color: var(--agricultura-neutral-black-color);
+}
+
+.fi-ta-header-cell-label {
+    color: var(--agricultura-neutral-black-color);
+}
+
+.fi-btn-label {
+    color: var(--agricultura-white-color);
+}
+
+/* Botones */
+.fi-btn, .fi-btn:hover {
+    background-color: var(--agricultura-secondary-color);
+    color: var(--agricultura-white-color);
+}
+
+.fi-btn-color-primary, .fi-btn-color-primary:hover {
+    background-color: var(--agricultura-primary-color);
+}
+
+.fi-color-danger {
+    color: var(--agricultura-secondary-color)
+}
+
+.fi-btn-color-gray, .fi-btn-color-gray:hover {
+    background-color: var(--agricultura-cool-gray-color);
+}
+
+/* Texto de menu desplegable */
+.fi-topbar-item-button {
+    color: var(--agricultura-neutral-black-color);
+}
+
+.fi-dropdown-list-item-icon {
+    color: var(--agricultura-neutral-black-color);
+}
+
+.fi-dropdown-list-item-label {
+    color: var(--agricultura-neutral-black-color);
+}
+
+.fi-dropdown-list-item:hover, 
+.fi-dropdown-list-item:hover > .fi-dropdown-list-item-label, 
+.fi-dropdown-list-item:hover > .fi-dropdown-list-item-icon {
+    background-color: var(--agricultura-cool-gray-color);
+    color: var(--agricultura-white-color);
+}

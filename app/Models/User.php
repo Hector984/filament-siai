@@ -62,8 +62,9 @@ class User extends Authenticatable
         return $this->belongsTo(SsUnidadRespons::class, 'idur', 'Ur');
     }
 
-    public function unidadEjecutora(){
-        return $this->belongsTo(SsUnidadEjecut::class,'idue','Ue');
+    public function ue(): BelongsTo
+    {
+        return $this->belongsTo(SsUnidadEjecut::class, 'idue', 'Ue');
     }
 
     public function almacen(): BelongsTo{
